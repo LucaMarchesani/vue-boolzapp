@@ -28,14 +28,7 @@
                     <div class="d-flex justify-content-center align-content-center">
                         <input type="text" name="search" class="col-11 text-center" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
-                    <div class="contact col-11 p-2 bg-danger">contatto 1</div>
+                    <div v-for="element in contacts" class="contact col-11 p-2 bg-danger">contatto 1</div>
                 </div>
                 <div class="chat col-8 bg-dark">
                     <div class="account col-12 p-4 bg-success">
