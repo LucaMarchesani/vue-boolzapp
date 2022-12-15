@@ -3,6 +3,10 @@
 
 }
 
+i{
+    color: gray;
+    font-size: 1.1rem;
+}
 
 div.contacts{
     height: 95vh;
