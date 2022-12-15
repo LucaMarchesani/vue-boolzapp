@@ -1,17 +1,42 @@
+.bg-app{
+    background-color: #eaeaea;
+
+}
+
+
 div.contacts{
     height: 95vh;
 }
 
 div.contact{
-    border: 1px solid black;
+    border-top: 1px solid lightgray;
+    width: 100%;
+}
+
+img.user-pic{
+    border-radius: 50%;
+    height: 2.2rem;
+    margin: 5px;
 }
 
 div.chat{
     height: 95vh;
+}
 
+div.user-chat{
+    border-left: 1px solid gray;
 }
 
 div.text-area{
     height: 80.4%;
-    background-color: magenta;
+    background-image: url(../img/mine.jpg);
+    background-size: 320px;
+}
+
+div.my-text{
+
+}
+
+div.notification{
+    background-color: #8edafc;
 }

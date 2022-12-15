@@ -10,6 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- GOOGLE FONTS -->
+
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CUSTOM STYLE CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -18,25 +23,46 @@
     <div id="app">
         <main>
             <div class="container-fluid mt-3 col-10 d-flex">
-                <div class="contacts col-4 bg-success">
-                    <div class="account col-12 p-4 bg-danger">
-                        sofia account
+                <div class="contacts col-4 bg-light">
+                    <div class="account col-12 bg-app d-flex justify-content-between align-baseline">
+                        <div class="col-9">
+                            <img src="./img/avatar_1.jpg" class="user-pic img-fluid" alt="">
+                            <span class="col-10">sofia</span>
+                        </div>
+                        <div class="icons col-3 text-end">
+                            <i class="fa-solid fa-circle-notch m-2"></i>
+                            <i class="fa-solid fa-message m-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical m-2"></i>
+                        </div>
                     </div>
-                    <div class="account col-12 p-4 bg-light">
+                    <div class="notification col-12 p-4">
                         notifiche
                     </div>
-                    <div class="d-flex justify-content-center align-content-center">
-                        <input type="text" name="search" class="col-11 text-center" placeholder="Cerca o inizia una nuova chat">
+                    <div class="d-flex p-1 justify-content-center align-content-center">
+                        <input type="search" name="search" class="col-11" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                    <div v-for="element in contacts" class="contact col-11 p-2 bg-danger">contatto 1</div>
+                    <div v-for="element in contacts" class="contact d-flex col-11 bg-light">
+                        <div class="col-2">
+                            <img src="./img/avatar_1.jpg" class="user-pic img-fluid" alt="">
+                        </div>
+                        <div class="col-10">
+                            <p> {{element.name}} </p>
+                            <p> {{element.message}} </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="chat col-8 bg-dark">
-                    <div class="account col-12 p-4 bg-success">
-                        michele
+                <div class="chat col-8">
+                    <div class="user-chat col-12 bg-app">
+                        <div class="account col-12 bg-app d-flex">
+                            <div class="col-2">
+                                <img src="./img/avatar_1.jpg" class="user-pic img-fluid" alt="">
+                            </div>
+                            <p class="col-10">michele</p>
+                        </div>
                     </div>
-                    <div class="text-area col-12 p-5">
-                    </div>
-                    <div class="col-12 bg-success p-2 d-flex justify-content-end">
+                    <div class="text-area col-12 p-5"></div>
+                    <div class="my-text col-12 p-2 d-flex justify-content-end bg-app">
+                        <i class="fa-regular fa-face-smile"></i>
                         <input type="text" name="" class="col-11" placeholder="scrivi un messaggio">
                     </div>
                 </div>
