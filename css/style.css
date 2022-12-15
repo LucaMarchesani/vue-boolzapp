@@ -10,3 +10,8 @@ div.chat{
     height: 95vh;
 
 }
+
+div.text-area{
+    height: 80.4%;
+    background-color: magenta;
+}
