@@ -23,46 +23,58 @@
     <div id="app">
         <main>
             <div class="container-fluid mt-3 col-10 d-flex">
+                <!-- sezione superiore contatti -->
                 <div class="contacts col-4 bg-light">
                     <div class="account col-12 bg-app d-flex justify-content-between">
-                        <div class="col-9">
-                            <img src="./img/avatar_1.jpg" class="user-pic img-fluid" alt="">
+                        <div class="col-8">
+                            <img src="./img/avatar_io.jpg" class="user-pic img-fluid" alt="">
                             <span class="col-10">Sofia</span>
                         </div>
-                        <div class="icons col-3 align-self-center text-end">
+                        <div class="icons col-4 align-self-center text-end me-1">
                             <i class="fa-solid fa-circle-notch m-2"></i>
                             <i class="fa-solid fa-message m-2"></i>
-                            <i class="fa-solid fa-ellipsis-vertical m-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical m-2 "></i>
                         </div>
                     </div>
-                    <div class="notification p-1 col-12 d-flex">
-                        <div class="col-3 align-self-center ms-2">
-                            <i class="fa-solid fa-bell-slash fa-2x text-light"></i>
+                    <!-- sezione notifiche -->
+                    <div class="notification p-2 col-12 d-flex">
+                        <div class="col-1 align-self-center ms-1 me-3">
+                            <i class="fa-solid fa-bell-slash bell text-light"></i>
                         </div>
-                        <div class="col-9">
-                            <p>ricevi notifiche di nuovi messaggi</p>
-                            <p>attiva notifiche dekstop</p>
+                        <div class="col-11">
+                            <p class="notification-text m-0">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="notification-text text-decoration-underline text-secondary m-0">Attiva notifiche
+                                dekstop</p>
                         </div>
                     </div>
-                    <div class="d-flex p-1 justify-content-center">
-                        <input type="search" name="search" class="search-bar"
-                            placeholder="Cerca o inizia una nuova chat">
+                    <!-- barra di ricerca contatti -->
+                    <div class="d-flex justify-content-center bg-app">
+                        <i class="fa-solid fa-magnifying-glass align-self-center mx-3"></i>
+                        <input type="search" name="" id="search-bar" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                    <div v-for="element in contacts" class="contact d-flex col-11 bg-light">
+                    <!-- contatti -->
+                    <div v-for="(element, index) in contacts" class="contact d-flex col-11 bg-light">
                         <div class="col-2">
-                            <img src="./img/avatar_1.jpg" class="user-pic img-fluid" alt="">
+                            <img :src="`./img/avatar${element.avatar}.jpg`" class="user-pic img-fluid"
+                                alt="contact-photo">
                         </div>
-                        <div class="col-10">
-                            <p> {{element.name}} </p>
+                        <div class="col-10 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0"> {{element.name}} </p>
+                                <p class="last-message m-0 text-secondary"> Ultimo messaggio inviato </p>
+                            </div>
+                            <p class="last-message align-self-start text-secondary me-2">hh:mm</p>
                         </div>
+
                     </div>
                 </div>
+                <!-- sezione superiore chat-->
                 <div class="chat col-8">
                     <div class="user-chat col-12 bg-app">
                         <div class="account col-12 d-flex">
-                            <div class="col-9">
+                            <div class="chat-header col-9">
                                 <img src="./img/avatar_1.jpg" class="user-pic img-fluid" alt="">
-                                <span class="col-10">michele</span>
+                                <span class="col-10">Michele</span>
                             </div>
                             <div class="icons col-3 align-self-center text-end">
                                 <i class="fa-solid fa-magnifying-glass m-2"></i>
@@ -70,15 +82,13 @@
                                 <i class="fa-solid fa-ellipsis-vertical m-2"></i>
                             </div>
                         </div>
+                        <!-- sezione principale chat -->
                         <div class="text-area col-12"></div>
+                        <!-- sezione input messaggi -->
                         <div class="my-text col-12 d-flex justify-content-between mt-2">
-                            <div class="col-1 text-center align-self-center">
-                                <i class="fa-regular fa-face-smile"></i>
-                            </div>
-                            <input type="text" name="" class="col-10" placeholder="scrivi un messaggio">
-                            <div class="col-1 text-center align-self-center">
-                                <i class="fa-solid fa-microphone"></i>
-                            </div>
+                            <i class="fa-regular fa-face-smile col-1 text-center align-self-center"></i>
+                            <input type="text" name="" class="message col-10" placeholder="Scrivi un messaggio">
+                            <i class="fa-solid fa-microphone col-1 text-center align-self-center"></i>
                         </div>
                     </div>
                 </div>

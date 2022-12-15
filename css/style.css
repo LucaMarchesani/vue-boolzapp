@@ -1,6 +1,14 @@
+body{
+    background-color: green;
+}
+
+main{
+    font-size: .8rem;
+}
+
+/* classi generali */
 .bg-app{
     background-color: #eaeaea;
-
 }
 
 i{
@@ -8,10 +16,37 @@ i{
     font-size: 1.1rem;
 }
 
-input.search-bar{
-    width: 98%;
+/* sezione notifiche */
+
+div.notification{
+    background-color: #8edafc;
 }
 
+p.notification-text{
+    font-size: .6rem;
+}
+
+div.bell-circle{
+    background-color: white;
+    border-radius: 50%;
+}
+
+i.bell{
+    font-size: 1.2rem;
+}
+
+/* barra di ricerca contatti */
+div.bg-app> i{
+    font-size: .9rem;
+}
+input#search-bar{
+    width: 100%;
+    margin: .3rem .3rem .3rem 0;
+    font-size: 0.8rem;
+    border: none;
+}
+
+/* contatti */
 div.contacts{
     height: 95vh;
 }
@@ -21,9 +56,14 @@ div.contact{
     width: 100%;
 }
 
+p.last-message{
+    font-size: .6rem;
+}
+
+/* sezione chat */
 img.user-pic{
     border-radius: 50%;
-    height: 2.2rem;
+    height: 2.25rem;
     margin: 5px;
 }
 
@@ -31,16 +71,20 @@ div.user-chat{
     height: 95vh;
 }
 
-div.user-chat{
-    border-left: 1px solid gray;
+div.chat-header{
+    border-left: 1px solid lightgray;
 }
 
 div.text-area{
-    height: 85%;
+    height: 84%;
     background-image: url(../img/mine.jpg);
     background-size: 320px;
 }
 
-div.notification{
-    background-color: #8edafc;
+/* sezione messagi chat */
+input.message{
+    font-size: .8rem;
+    padding: .4rem;
+    border: none;
+    border-radius: .2rem;
 }
