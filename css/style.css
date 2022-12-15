@@ -8,8 +8,12 @@ i{
     font-size: 1.1rem;
 }
 
+input.search-bar{
+    width: 98%;
+}
+
 div.contacts{
-    height: 95vh;
+    height: 91vh;
 }
 
 div.contact{
@@ -35,10 +39,6 @@ div.text-area{
     height: 80.4%;
     background-image: url(../img/mine.jpg);
     background-size: 320px;
-}
-
-div.my-text{
-
 }
 
 div.notification{
