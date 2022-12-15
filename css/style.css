@@ -13,7 +13,7 @@ input.search-bar{
 }
 
 div.contacts{
-    height: 91vh;
+    height: 95vh;
 }
 
 div.contact{
@@ -27,7 +27,7 @@ img.user-pic{
     margin: 5px;
 }
 
-div.chat{
+div.user-chat{
     height: 95vh;
 }
 
@@ -36,7 +36,7 @@ div.user-chat{
 }
 
 div.text-area{
-    height: 80.4%;
+    height: 85%;
     background-image: url(../img/mine.jpg);
     background-size: 320px;
 }
