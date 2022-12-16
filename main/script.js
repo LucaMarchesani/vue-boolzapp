@@ -165,8 +165,21 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            aIndex: 0,
+            newMessage: "",
 
         }
+    },
+    methods: {
+        visibleChat(currentchat) {
+            this.aIndex = this.contacts.indexOf(currentchat);
+        },
+
+        addMessage() {
+            this.contacts[this.aIndex].messages.push({ message: this.newMessage, status: 'sent' });
+            this.newMessage = '';
+        },
     }
+
 }).mount('#app')

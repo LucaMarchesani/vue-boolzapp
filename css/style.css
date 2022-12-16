@@ -1,105 +1,116 @@
-body{
+body {
     min-width: 880px;
     background-color: green;
 }
 
-main{
+main {
     font-size: .8rem;
 }
 
 /* classi generali */
-.bg-app{
+.bg-app {
     background-color: #eaeaea;
 }
 
-i{
+i {
     color: gray;
     font-size: 1.1rem;
 }
 
 /* sezione notifiche */
 
-div.notification{
+div.notification {
     background-color: #8edafc;
 }
 
-p.notification-text{
+p.notification-text {
     font-size: .6rem;
 }
 
-div.bell-circle{
+div.bell-circle {
     background-color: white;
     border-radius: 50%;
 }
 
-i.bell{
+i.bell {
     font-size: 1.2rem;
 }
 
 /* barra di ricerca contatti */
-div.bg-app> i{
+div.bg-app>i {
     font-size: .9rem;
 }
-input#search-bar{
+
+input#search-bar {
     width: 100%;
     margin: .3rem .3rem .3rem 0;
     font-size: 0.8rem;
     border: none;
+    border-radius: .2rem;
 }
 
 /* contatti */
-div.contacts{
+div.contacts {
     height: 95vh;
 }
 
-div.contact{
-    border-top: 1px solid lightgray;
-    width: 100%;
+.clicked {
+    background-color: #e9ebeb;
 }
 
-p.last-message{
+div.contact {
+    border-top: 1px solid lightgray;
+    width: 100%;
+    cursor: pointer;
+}
+
+p.last-message {
     font-size: .6rem;
 }
 
 /* sezione chat */
-img.user-pic{
+img.user-pic {
     border-radius: 50%;
     height: 2.25rem;
     margin: 5px;
 }
 
-div.user-chat{
+div.user-chat {
+    border-left: 1px solid lightgray;
     height: 95vh;
 }
 
-div.chat-header{
-    border-left: 1px solid lightgray;
-}
-
-div.text-area{
-    padding: 4rem;
+div.text-area {
+    padding: 2rem 4rem;
     height: 84%;
     background-image: url(../img/mine.jpg);
     background-size: 320px;
 }
-.green-text{
+
+.green-text {
+    font-size: .8rem;
+    margin: .4rem;
     float: right;
-    padding: 1rem;
+    padding: .5rem 6rem .7rem .5rem;
     background-color: #d5f9ba;
-    border-radius: 1rem;
+    border-radius: .3rem;
     clear: both;
+
 }
 
-.white-text{
+.white-text {
+    font-size: .8rem;
+    margin: .4rem;
     float: left;
-    padding: 1rem;
+    padding: .5rem 6rem .7rem .5rem;
     background-color: #ffffff;
-    border-radius: 1rem;
+    border-radius: .3rem;
     clear: both;
+
 }
 
 /* sezione messagi chat */
-input.message{
+input.message {
     font-size: .8rem;
     padding: .4rem;
     border: none;

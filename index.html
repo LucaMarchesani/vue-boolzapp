@@ -53,7 +53,8 @@
                         <input type="search" name="" id="search-bar" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- contatti -->
-                    <div v-for="(element, index) in contacts" class="contact d-flex col-11 bg-light">
+                    <div v-for="(element, index) in contacts" class="contact d-flex col-11"
+                        @click="visibleChat(element)" :class="(index === aIndex) ? 'clicked' : ''">
                         <div class="col-2">
                             <img :src="`./img/avatar${element.avatar}.jpg`" class="user-pic img-fluid"
                                 alt="contact-photo">
@@ -65,7 +66,6 @@
                             </div>
                             <p class="last-message align-self-start text-secondary me-2">hh:mm</p>
                         </div>
-
                     </div>
                 </div>
                 <!-- sezione superiore chat-->
@@ -73,8 +73,9 @@
                     <div class="user-chat col-12 bg-app">
                         <div class="account col-12 d-flex">
                             <div class="chat-header col-9">
-                                <img src="./img/avatar_1.jpg" class="user-pic img-fluid" alt="">
-                                <span class="col-10">Michele</span>
+                                <img :src="`./img/avatar${contacts[aIndex].avatar}.jpg`" class="user-pic img-fluid"
+                                    alt="">
+                                <span class="col-10">{{contacts[aIndex].name}}</span>
                             </div>
                             <div class="icons col-3 align-self-center text-end">
                                 <i class="fa-solid fa-magnifying-glass m-2"></i>
@@ -84,18 +85,20 @@
                         </div>
                         <!-- sezione principale chat -->
                         <div class="text-area col-12">
-                            <div class="green-text">
-                                ciao asdlkfjasklncklsancv
-                            </div>
-                            <div class="white-text">
-                                ciaoasdl;knasdklnfklasnvklnsad,mfnsdklncklasncklasnckln
+                            <div v-for="msg in contacts[aIndex].messages"
+                                :class="(msg.status === 'received') ? 'white-text' : 'green-text'">
+                                <div>
+                                    {{msg.message}}
+                                </div>
                             </div>
                         </div>
+
 
                         <!-- sezione input messaggi -->
                         <div class="my-text col-12 d-flex justify-content-between mt-2">
                             <i class="fa-regular fa-face-smile col-1 text-center align-self-center"></i>
-                            <input type="text" name="" class="message col-10" placeholder="Scrivi un messaggio">
+                            <input v-model="newMessage" @keyup.enter="addMessage(newMessage)" type="text"
+                                class="message col-10" placeholder="Scrivi un messaggio">
                             <i class="fa-solid fa-microphone col-1 text-center align-self-center"></i>
                         </div>
                     </div>
