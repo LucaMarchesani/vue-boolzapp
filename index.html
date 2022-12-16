@@ -50,7 +50,7 @@
                     <!-- barra di ricerca contatti -->
                     <div class="d-flex justify-content-center bg-app">
                         <i class="fa-solid fa-magnifying-glass align-self-center mx-3"></i>
-                        <input type="search" name="" id="search-bar" placeholder="Cerca o inizia una nuova chat">
+                        <input type="search" id="search-bar" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- contatti -->
                     <div v-for="(element, index) in contacts" class="contact d-flex col-11"
@@ -64,7 +64,9 @@
                                 <p class="m-0"> {{element.name}} </p>
                                 <p class="last-message m-0 text-secondary"> Ultimo messaggio inviato </p>
                             </div>
-                            <p class="last-message align-self-start text-secondary me-2">hh:mm</p>
+                            <p class="last-message align-self-start text-secondary me-2">
+                                12:00
+                            </p>
                         </div>
                     </div>
                 </div>

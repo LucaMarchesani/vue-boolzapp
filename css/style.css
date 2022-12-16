@@ -1,6 +1,7 @@
 body {
+    
     min-width: 880px;
-    background-color: green;
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #d9dbd4 15vh, #d9dbd4 100%);
 }
 
 main {
@@ -85,6 +86,7 @@ div.text-area {
     height: 84%;
     background-image: url(../img/mine.jpg);
     background-size: 320px;
+    overflow: scroll;
 }
 
 .green-text {
