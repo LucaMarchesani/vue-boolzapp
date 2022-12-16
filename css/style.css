@@ -77,9 +77,25 @@ div.chat-header{
 }
 
 div.text-area{
+    padding: 4rem;
     height: 84%;
     background-image: url(../img/mine.jpg);
     background-size: 320px;
+}
+.green-text{
+    float: right;
+    padding: 1rem;
+    background-color: #d5f9ba;
+    border-radius: 1rem;
+    clear: both;
+}
+
+.white-text{
+    float: left;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    clear: both;
 }
 
 /* sezione messagi chat */
