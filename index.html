@@ -23,6 +23,7 @@
     <div id="app">
         <main>
             <div class="container-fluid mt-3 col-10 d-flex">
+
                 <!-- sezione superiore contatti -->
                 <div class="contacts col-4 bg-light">
                     <div class="account col-12 bg-app d-flex justify-content-between">
@@ -36,6 +37,7 @@
                             <i class="fa-solid fa-ellipsis-vertical m-2 "></i>
                         </div>
                     </div>
+
                     <!-- sezione notifiche -->
                     <div class="notification p-2 col-12 d-flex">
                         <div class="col-1 align-self-center ms-1 me-3">
@@ -47,11 +49,13 @@
                                 dekstop</p>
                         </div>
                     </div>
+
                     <!-- barra di ricerca contatti -->
                     <div class="d-flex justify-content-center bg-app">
                         <i class="fa-solid fa-magnifying-glass align-self-center mx-3"></i>
                         <input type="search" id="search-bar" placeholder="Cerca o inizia una nuova chat">
                     </div>
+
                     <!-- contatti -->
                     <div v-for="(element, index) in contacts" class="contact d-flex col-11"
                         @click="visibleChat(element)" :class="(index === aIndex) ? 'clicked' : ''">
@@ -70,6 +74,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- sezione superiore chat-->
                 <div class="chat col-8">
                     <div class="user-chat col-12 bg-app">
@@ -85,6 +90,7 @@
                                 <i class="fa-solid fa-ellipsis-vertical m-2"></i>
                             </div>
                         </div>
+
                         <!-- sezione principale chat -->
                         <div class="text-area col-12">
                             <div v-for="msg in contacts[aIndex].messages"

@@ -177,13 +177,13 @@ createApp({
         },
 
         addMessage() {
-            this.contacts[this.aIndex].messages.push({ message: this.newMessage, status: 'sent' });
-            this.newMessage = '';
-            setTimeout(() => {
-            this.contacts[this.aIndex].messages.push({ message: 'OK!!', status: 'received' });                
-            }, 1000);
-                
-
+            if (this.newMessage !== '') {
+                this.contacts[this.aIndex].messages.push({ message: this.newMessage, status: 'sent' });
+                this.newMessage = '';
+                setTimeout(() => {
+                    this.contacts[this.aIndex].messages.push({ message: 'OK!!', status: 'received' });
+                }, 1000);
+            }
         },
     }
 
