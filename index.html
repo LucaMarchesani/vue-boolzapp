@@ -95,8 +95,9 @@
                         <div class="text-area col-12">
                             <div v-for="msg in contacts[aIndex].messages"
                                 :class="(msg.status === 'received') ? 'white-text' : 'green-text'">
-                                <div>
-                                    {{msg.message}}
+                                <div class="d-flex">
+                                    <p>{{msg.message}}</p>
+                                    <span class="date">{{msg.date}}</span>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +114,6 @@
                 </div>
         </main>
     </div>
-
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./main/script.js"></script>

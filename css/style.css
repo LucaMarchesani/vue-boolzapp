@@ -93,7 +93,7 @@ div.text-area {
     font-size: .8rem;
     margin: .4rem;
     float: right;
-    padding: .5rem 6rem .7rem .5rem;
+    padding: .5rem .2rem .2rem .5rem;
     background-color: #d5f9ba;
     border-radius: .3rem;
     clear: both;
@@ -104,11 +104,17 @@ div.text-area {
     font-size: .8rem;
     margin: .4rem;
     float: left;
-    padding: .5rem 6rem .7rem .5rem;
+    padding: .5rem .2rem .2rem .5rem;
     background-color: #ffffff;
     border-radius: .3rem;
     clear: both;
+}
 
+span.date{
+    align-self: flex-end;
+    color: gray;
+    font-size: .6rem;
+    margin-left: 2.5rem;
 }
 
 /* sezione messagi chat */

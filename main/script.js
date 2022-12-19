@@ -167,8 +167,8 @@ createApp({
                 }
             ],
             aIndex: 0,
-            newMessage: "",
-
+            newMessage: '',
+            userSearch: '',
         }
     },
     methods: {
@@ -177,11 +177,12 @@ createApp({
         },
 
         addMessage() {
+
             if (this.newMessage !== '') {
-                this.contacts[this.aIndex].messages.push({ message: this.newMessage, status: 'sent' });
+                this.contacts[this.aIndex].messages.push({ message: this.newMessage, status: 'sent', date: 'data del messaggio'});
                 this.newMessage = '';
                 setTimeout(() => {
-                    this.contacts[this.aIndex].messages.push({ message: 'OK!!', status: 'received' });
+                    this.contacts[this.aIndex].messages.push({ message: 'OK!!', status: 'received', date: 'data del messaggio' });
                 }, 1000);
             }
         },
