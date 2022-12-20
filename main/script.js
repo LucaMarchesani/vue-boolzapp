@@ -167,11 +167,11 @@ createApp({
                 }
             ],
             aIndex: 0,
-            newMessage: '',
-            userSearch: '',
+            newMessage: ''
         }
     },
     methods: {
+
         visibleChat(currentchat) {
             this.aIndex = this.contacts.indexOf(currentchat);
         },
@@ -179,12 +179,12 @@ createApp({
         addMessage() {
 
             if (this.newMessage !== '') {
-                this.contacts[this.aIndex].messages.push({ message: this.newMessage, status: 'sent', date: 'data del messaggio'});
+                this.contacts[this.aIndex].messages.push({ message: this.newMessage, status: 'sent', date: `${luxon.DateTime.now().toFormat('D')} ${luxon.DateTime.now().toFormat('t')}`});
                 this.newMessage = '';
                 setTimeout(() => {
-                    this.contacts[this.aIndex].messages.push({ message: 'OK!!', status: 'received', date: 'data del messaggio' });
+                    this.contacts[this.aIndex].messages.push({ message: 'OK!!', status: 'received', date: `${luxon.DateTime.now().toFormat('D')} ${luxon.DateTime.now().toFormat('t')}`});
                 }, 1000);
-            }
+            };
         },
     }
 
