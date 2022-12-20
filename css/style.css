@@ -1,113 +1,177 @@
-body {
-    
-    min-width: 880px;
-    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #d9dbd4 15vh, #d9dbd4 100%);
+body{
+    font-family: 'Lato', sans-serif;
+    background-image: 
+    linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%);
 }
 
-main {
+main.boolzapp{
+    height: 100vh;
+}
+
+/* GENERALI */
+.message{
     font-size: .8rem;
+    margin: .4rem;
+    float: right;
+    padding: .5rem .2rem .2rem .5rem;
+    border-radius: .3rem;
+    clear: both;
 }
 
-/* classi generali */
-.bg-app {
-    background-color: #eaeaea;
+i{
+    color: #b1b1b1;
 }
 
-i {
-    color: gray;
-    font-size: 1.1rem;
+/* SEZIONE CONTATTI */
+div.contacts{
+    background-color: #ffffff;
+    height: 95vh;
 }
 
-/* sezione notifiche */
-
-div.notification {
-    background-color: #8edafc;
-}
-
-p.notification-text {
-    font-size: .6rem;
-}
-
-div.bell-circle {
-    background-color: white;
-    border-radius: 50%;
-}
-
-i.bell {
-    font-size: 1.2rem;
-}
-
-/* barra di ricerca contatti */
-div.bg-app>i {
+div.user-info p{
+    margin-top: 40%;
     font-size: .9rem;
 }
 
-input#search-bar {
-    width: 100%;
-    margin: .3rem .3rem .3rem 0;
-    font-size: 0.8rem;
-    border: none;
-    border-radius: .2rem;
+div.top-bar-contacts{
+    background-color: #eaeaea;
+    height: 3rem;
 }
 
-/* contatti */
-div.contacts {
-    height: 95vh;
+div.top-bar-contacts img{
+    margin: 3px 5px;
+    border-radius: 50%;
+}
+
+/* SEZIONE NOTIFICHE */
+div.notification{
+    font-size: .7rem;
+    background-color: #8edafc;
+    height: 3.5rem;
+}
+
+div.notify-icon{
+    margin-left: 10px;
+    margin-right: 5px;
+    position: relative;
+    background-color: #ffffff;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+div.notify-icon i{
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #8edafc;
+}
+
+div.notify-info :last-child{
+    font-size: .6rem;
+}
+
+/* SEZIONE SEARCHBAR */
+div.search-bar{
+    background-color: #eaeaea;
+    height: 2rem;
+}
+
+div.search-icon{
+    align-self: center;
+    background-color: #ffffff;
+    height: 1.5rem;
+    border-right: 1px solid lightgray;
+}
+
+div.search-bar input{
+    padding-left: .5rem;
+    width: 15.5rem;
+    height: 1.5rem;
+    font-size: .8rem;
+    border: none;
+}
+
+div.contacts-list{
+    height: calc(100% - 8.5rem);
+}
+
+div.contact{
+    cursor: pointer;
+    border-top: 1px solid lightgray;
+    height: 3.2rem;
 }
 
 .clicked {
     background-color: #e9ebeb;
 }
 
-div.contact {
-    border-top: 1px solid lightgray;
-    width: 100%;
-    cursor: pointer;
-}
-
-p.last-message {
-    font-size: .6rem;
-}
-
-/* sezione chat */
-img.user-pic {
+div.contact img{
+    margin: 3px 10px;
     border-radius: 50%;
-    height: 2.25rem;
-    margin: 5px;
 }
 
-div.user-chat {
-    border-left: 1px solid lightgray;
+div.contact-info{
+    width: 100%;
+}
+
+div.contact p{
+    margin: 0;
+    font-size: .9rem;
+}
+
+div.contact :last-child{
+    font-size: .7rem;
+}
+
+/* SEZIONE CHAT */
+div.chat{
+    background-color: chartreuse;
     height: 95vh;
+    border-left: 1px solid lightgray;
 }
 
-div.text-area {
+div.top-bar-chat{
+    background-color: #eaeaea;
+    height: 3rem;
+}
+
+div.top-bar-chat img{
+    margin: 3px 10px;
+    border-radius: 50%;
+}
+
+div.chat-contact-info p{
+    margin: 0;
+    font-size: .9rem;
+}
+
+div.chat-contact-info :last-child{
+    font-size: .7rem;
+}
+
+div.main-chat{
     padding: 2rem 4rem;
-    height: 84%;
     background-image: url(../img/mine.jpg);
     background-size: 320px;
+    height: calc(100% - 6rem);
     overflow: scroll;
 }
 
 .green-text {
-    font-size: .8rem;
-    margin: .4rem;
     float: right;
-    padding: .5rem .2rem .2rem .5rem;
     background-color: #d5f9ba;
-    border-radius: .3rem;
-    clear: both;
-
 }
 
 .white-text {
-    font-size: .8rem;
-    margin: .4rem;
     float: left;
-    padding: .5rem .2rem .2rem .5rem;
     background-color: #ffffff;
-    border-radius: .3rem;
-    clear: both;
 }
 
 span.date{
@@ -117,10 +181,14 @@ span.date{
     margin-left: 2.5rem;
 }
 
-/* sezione messagi chat */
-input.message {
-    font-size: .8rem;
-    padding: .4rem;
+div.input-msg{
+    background-color: #eaeaea;
+    height: 3rem;
+}
+
+div.input-msg input{
     border: none;
-    border-radius: .2rem;
+    border-radius: 3px;
+    height: 2rem;
+    font-size: .8rem;
 }

@@ -167,7 +167,8 @@ createApp({
                 }
             ],
             aIndex: 0,
-            newMessage: ''
+            newMessage: '',
+            search: ""
         }
     },
     methods: {

@@ -10,7 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- GOOGLE FONTS -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -21,97 +23,91 @@
 
 <body>
     <div id="app">
-        <main>
-            <div class="container-fluid mt-3 col-10 d-flex">
-
-                <!-- sezione superiore contatti -->
-                <div class="contacts col-4 bg-light">
-                    <div class="account col-12 bg-app d-flex justify-content-between">
-                        <div class="col-8">
-                            <img src="./img/avatar_io.jpg" class="user-pic img-fluid" alt="">
-                            <span class="col-10">Sofia</span>
+        <main class="boolzapp container col-12 d-flex justify-content-center align-items-center ">
+            <!-- SEZIONE CONTATTI -->
+            <div class="contacts col-3">
+                <div class="top-bar-contacts d-flex">
+                    <img src="./img/avatar_io.jpg" alt="">
+                    <div class="contact-info d-flex justify-content-between">
+                        <div class="user-info">
+                            <p>Sofia</p>
                         </div>
-                        <div class="icons col-4 align-self-center text-end me-1">
+                        <div class="icons align-self-center text-end">
                             <i class="fa-solid fa-circle-notch m-2"></i>
                             <i class="fa-solid fa-message m-2"></i>
                             <i class="fa-solid fa-ellipsis-vertical m-2 "></i>
                         </div>
                     </div>
-
-                    <!-- sezione notifiche -->
-                    <div class="notification p-2 col-12 d-flex">
-                        <div class="col-1 align-self-center ms-1 me-3">
-                            <i class="fa-solid fa-bell-slash bell text-light"></i>
-                        </div>
-                        <div class="col-11">
-                            <p class="notification-text m-0">Ricevi notifiche di nuovi messaggi</p>
-                            <p class="notification-text text-decoration-underline text-secondary m-0">Attiva notifiche
-                                dekstop</p>
-                        </div>
+                </div>
+                <!-- SEZIONE NOTIFICHE -->
+                <div class="notification d-flex">
+                    <div class="notify-icon align-self-center">
+                        <i class="fa-solid fa-bell-slash"></i>
                     </div>
-
-                    <!-- barra di ricerca contatti -->
-                    <div class="d-flex justify-content-center bg-app">
-                        <i class="fa-solid fa-magnifying-glass align-self-center mx-3"></i>
-                        <input type="search" id="search-bar" placeholder="Cerca o inizia una nuova chat">
+                    <div class="notify-info align-self-center">
+                        <p class="notification-text m-0">Ricevi notifiche di nuovi messaggi</p>
+                        <p class="notification-text text-decoration-underline text-secondary m-0">Attiva notifiche dekstop</p>
                     </div>
+                </div>
+                <!-- SEZIONE SEARCHBAR -->
+                <div class="search-bar d-flex justify-content-center">
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass ms-3 me-3"></i>
+                    </div>
+                    <input type="text" class="mt-1"  placeholder="Cerca o inizia una nuova chat">
 
-                    <!-- contatti -->
-                    <div v-for="element, index in contacts" class="contact d-flex col-11"
-                        @click="visibleChat(element)" :class="(index === aIndex) ? 'clicked' : ''">
-                        <div class="col-2">
-                            <img :src="`./img/avatar${element.avatar}.jpg`" class="user-pic img-fluid"
-                                alt="contact-photo">
-                        </div>
-                        <div class="col-10 d-flex justify-content-between">
+                </div>
+                <!-- SEZIONE LISTA CONTATTI -->
+                <div class="contacts-list">
+                    <div class="contact d-flex" v-for="contact, index in contacts" class="contact d-flex col-11"
+                        @click="visibleChat(contact)" :class="(index === aIndex) ? 'clicked' : ''">
+                        <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
+                        <div class="contact-info d-flex justify-content-between">
                             <div>
-                                <p class="m-0"> {{element.name}} </p>
-                                <p class="last-message m-0 text-secondary"> Ultimo messaggio inviato </p>
+                                <p class="text-dark">{{contact.name}}</p>
+                                <p class="text-secondary">Ultimo messaggio</p>
                             </div>
-                            <p class="last-message align-self-start text-secondary me-2">
-                                12:00
-                            </p>
+                            <p class="me-2 mt-1 text-secondary">12.00</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- sezione superiore chat-->
-                <div class="chat col-8">
-                    <div class="user-chat col-12 bg-app">
-                        <div class="account col-12 d-flex">
-                            <div class="chat-header col-9">
-                                <img :src="`./img/avatar${contacts[aIndex].avatar}.jpg`" class="user-pic img-fluid"
-                                    alt="">
-                                <span class="col-10">{{contacts[aIndex].name}}</span>
-                            </div>
-                            <div class="icons col-3 align-self-center text-end">
-                                <i class="fa-solid fa-magnifying-glass m-2"></i>
-                                <i class="fa-solid fa-paperclip m-2"></i>
-                                <i class="fa-solid fa-ellipsis-vertical m-2"></i>
-                            </div>
+            </div>
+            <!-- SEZIONE CHAT SUPERIORE -->
+            <div class="chat col-7">
+                <div class="top-bar-chat d-flex">
+                    <img :src="`./img/avatar${contacts[aIndex].avatar}.jpg`" alt="">
+                    <div class="contact-info d-flex justify-content-between">
+                        <div class="chat-contact-info">
+                            <p>{{contacts[aIndex].name}}</p>
+                            <p class="text-secondary">Ultimo accesso oggi alle 12:00</p>
                         </div>
-
-                        <!-- sezione principale chat -->
-                        <div class="text-area col-12">
-                            <div v-for="msg, index in contacts[aIndex].messages"
-                                :class="(msg.status === 'received') ? 'white-text' : 'green-text'">
-                                <div class="d-flex">
-                                    <p>{{msg.message}}</p>
-                                    <span class="date">{{msg.date.substring(11, 16)}}</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- sezione input messaggi -->
-                        <div class="my-text col-12 d-flex justify-content-between mt-2">
-                            <i class="fa-regular fa-face-smile col-1 text-center align-self-center"></i>
-                            <input v-model="newMessage" @keyup.enter="addMessage(newMessage)" type="text"
-                                class="message col-10" placeholder="Scrivi un messaggio">
-                            <i class="fa-solid fa-microphone col-1 text-center align-self-center"></i>
+                        <div class="icons align-self-center text-end">
+                            <i class="fa-solid fa-magnifying-glass m-2"></i>
+                            <i class="fa-solid fa-paperclip m-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical m-2"></i>
                         </div>
                     </div>
                 </div>
+                <!-- SEZIONE PRINCIPALE MESSAGGI -->
+                <div class="main-chat">
+                    <div class="message" v-for="msg, index in contacts[aIndex].messages"
+                        :class="(msg.status === 'received') ? 'white-text' : 'green-text'">
+                        <div class="d-flex">
+                            <p>{{msg.message}}</p>
+                            <span class="date">{{msg.date.substring(11, 16)}}</span>
+                        </div>
+                    </div>
+                    <!-- SEZIONE INPUT MESSAGGI -->
+                </div>
+                <div class="input-msg d-flex">
+                    <i class="col-1 fa-regular fa-face-smile col-1 text-center align-self-center"></i>
+                    <input v-model="newMessage" @keyup.enter="addMessage(newMessage)" class="col-10 align-self-center"
+                        type="text" placeholder="Scrivi un messaggio">
+                    <i class="col-1 fa-solid fa-microphone col-1 text-center align-self-center"></i>
+                </div>
+            </div>
+
         </main>
     </div>
 
